@@ -1,0 +1,99 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: false;
+}
+
+.item {
+    position: relative;
+    left: 40%;
+    animation: 2s gradient-angle infinite linear;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#ffffff, #fff0d7),
+    conic-gradient(
+            from var(--gradient-angle),
+            #584827 0%,
+            #c7a03c 37%,
+            #f9de90 30%,
+            #c7a03c 33%,
+            #584827 40%,
+            #584827 50%,
+            #c7a03c 77%,
+            #f9de90 80%,
+            #c7a03c 83%,
+            #584827 90%
+    );
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+@keyframes gradient-angle {
+    to {
+        --gradient-angle: 1turn;
+    }
+}
+
+/* その他 */
+html,
+body {
+    background: #141819;
+}
+
+body {
+    font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    line-height: 1.6;
+    display: grid;
+    align-content: center;
+    min-height: 100svh;
+    padding: 24px;
+    color: rgb(84 69 48);
+
+    gap: 24px;
+
+    @media (width < 970px) {
+        align-content: start;
+    }
+}
+
+.item td {
+    background:inherit;
+    display: grid;
+    justify-content: center;
+    margin-inline: auto;
+    grid-auto-flow: column;
+    gap: 16px 40px;
+    @media (width < 970px) {
+        grid-auto-flow: row;
+    }
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.item {
+    display: grid;
+    max-width: 240px;
+    padding: 20px;
+    text-decoration: none;
+    color: currentColor;
+    border-radius: 20px;
+    place-content: center;
+    place-items: center;
+    aspect-ratio: 1/1;
+    row-gap: 16px;
+}
+
+.item h2 {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.item p {
+    font-size: 12px;
+}
+

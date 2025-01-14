@@ -1,0 +1,286 @@
+:root {
+    /* 颜色方案 */
+    --primary-light: #8abdff;
+    --primary: #9c99ff;
+    --primary-dark: #ff9811;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: rgba(60, 64, 67, 0.52);
+    --greyDark: #9baacf;
+    --accent: #ffbc62; /* 主要强调色 */
+
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* 全局容器样式 */
+.Catalog {
+    position: relative;
+    width: 450px;
+
+    padding: 40px;
+    margin: auto ;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px var(--box-shadow-dark);
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.Catalog h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--accent);
+    text-align: center;
+}
+
+/* 用户输入框 */
+.Catalog .user-box {
+    position: relative;
+}
+
+.Catalog .user-box input {
+
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    outline: none;
+    background: transparent;
+}
+
+.Catalog .user-box label {
+    position: absolute;
+
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--accent);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.Catalog .user-box input:focus ~ label,
+.Catalog .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--primary-dark);
+    font-size: 12px;
+}
+/* Catalog Form Submit Button */
+.Catalog form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: var(--primary);  /* 按钮背景色 */
+    color: var(--white);  /* 按钮字体颜色 */
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;  /* 圆角 */
+    cursor: pointer;
+    transition: all 0.3s ease;  /* 平滑过渡效果 */
+    box-shadow: 0 0.5rem 1rem var(--box-shadow-light);  /* 按钮阴影 */
+}
+
+/* 按钮悬停效果 */
+.Catalog form input[type="submit"]:hover {
+    background-color: var(--primary-light);  /* 悬停时背景色变浅 */
+    box-shadow: 0 0.8rem 1.2rem var(--box-shadow-dark);  /* 增强阴影效果 */
+}
+
+/* 按钮点击效果 */
+.Catalog form input[type="submit"]:active {
+    background-color: var(--primary-dark);  /* 按钮点击时背景色变暗 */
+    transform: scale(0.98);  /* 点击时按钮略微缩小 */
+}
+
+/* 禁用状态按钮 */
+.Catalog form input[type="submit"]:disabled {
+    background-color: var(--greyLight-1);  /* 禁用时按钮颜色 */
+    color: var(--greyDark);  /* 禁用时字体颜色 */
+    cursor: not-allowed;  /* 禁用时鼠标指针 */
+    box-shadow: none;  /* 去掉阴影 */
+}
+
+/* 响应式设计：在较小的屏幕上调整按钮大小 */
+@media (max-width: 768px) {
+    .Catalog form input[type="submit"] {
+        padding: 12px 24px;  /* 在小屏幕上增加按钮内边距 */
+        font-size: 1rem;  /* 减小字体大小 */
+    }
+}
+
+/* 提交按钮 */
+.Catalog form a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--primary);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    background: var(--greyLight-2);
+    box-shadow: 0 .2rem .5rem var(--box-shadow-light);
+}
+
+.Catalog form a:hover {
+    background: var(--primary-light);
+    color: var(--white);
+}
+
+
+
+/* Select Box Styling */
+.select-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var( --greyLight-3);
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .8rem var(--box-shadow-light);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.select-box:hover {
+    box-shadow: 0 .5rem 1rem var(--box-shadow-dark);
+}
+
+.select-box label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--greyDark);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+/* Custom Select Styling */
+select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--greyLight-1);
+    border-radius: 0.5rem;
+    background-color: var( --greyLight-3);
+    box-shadow: 0 .1rem .4rem var(--box-shadow-light);
+    transition: all 0.3s ease;
+}
+
+select:hover {
+    border-color: var(--primary);
+}
+
+/* Checkbox Styling */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.checkbox-wrapper label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--greyDark);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--greyLight-2);
+    box-shadow: 0 .2rem .4rem var(--box-shadow-light);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.checkbox-wrapper label:hover {
+    background: var(--primary-light);
+    color: var(--white);
+}
+
+input[type="checkbox"]:checked + label {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 .2rem .6rem var(--box-shadow-dark);
+}
+
+.checkbox-wrapper label i {
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+input[type="checkbox"]:checked + label i {
+    color: var(--white);
+}
+
+/* Hover and Checked Effects */
+i {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--greyDark);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label i {
+    color: var(--white);
+}
+
+/* Button Styling */
+.register {
+    position: relative;
+    top: 680px;
+}
+
+.register a {
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem var(--box-shadow-dark);
+    transition: all 0.3s ease;
+}
+
+.Catalog a:hover {
+    background-color: var(--primary);
+    box-shadow: 0 0.5rem 1.5rem var(--box-shadow-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .select-box {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .select-box label {
+        font-size: 1rem;
+    }
+
+    .checkbox-wrapper {
+        gap: 0.5rem;
+    }
+
+    .checkbox-wrapper label {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .Catalog a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}

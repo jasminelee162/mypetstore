@@ -1,0 +1,5 @@
+#Main{
+    background-image: url("../images/cartBackground(1).jpg"); /* 修改为绝对路径 */
+    width:98%; /* 根据需要设置合适的宽度 */
+    border:1px;
+}
