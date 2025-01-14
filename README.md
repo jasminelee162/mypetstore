@@ -1,4 +1,6 @@
 # mypetstore
 
-目的：① 掌握使用JSP/Servlet技术进行Web应用网站的开发。熟练使用IntelliJ IDEA工具进行Web应用项目的构建和开发，掌握JSP和Servlet相关技术的运用，包括JSP语法、EL表达式语言、JSTL标准标签库、Servlet常用接口和类、JDBC等技术，加深对MVC开发模式的理解和应用。
+① 使用JSP/Servlet技术进行Web应用网站的开发。使用IntelliJ IDEA，MySQL工具进行Web应用项目的构建和开发，掌握JSP和Servlet相关技术的运用，包括JSP语法、EL表达式语言、JSTL标准标签库、Servlet常用接口和类、JDBC等技术，加深对MVC开发模式的理解和应用。
 ② 熟悉AJAX相关技术，掌握异步交互的通信方式，熟练使用JavaScript以及CSS等客户端技术，熟练掌握XMLHttpRequest对象的使用，熟悉通过jQuery插件简化前端界面交互和AJAX代码。
+
+实现功能：基本的商品展示模块，用户业务模块，订单管理模块。其中购物车中将相关信息存储在session中；使用了阿里云云端数据库对购物车和用户信息进行保存，将数据持久化；购物车数量刷新使用AJAX，来实现局部自动刷新。
